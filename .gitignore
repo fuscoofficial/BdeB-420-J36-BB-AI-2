@@ -37,3 +37,4 @@ TemplateSolution/x64
 *.tlog
 *.pdb
 TemplateSolution/Release
+.idea
