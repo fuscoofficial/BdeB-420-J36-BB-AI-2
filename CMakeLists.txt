@@ -35,11 +35,11 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT RaylibBasic)
 
 # Add libraries HEADER
-target_include_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}/include/raylib")
-target_include_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}/raylib/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}")
 
 # Link libraries BINARY
-target_link_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}/lib/$(Platform)")
+target_link_directories(${PROJECT_NAME} PUBLIC "${EXTERNAL_ROOT_DIR}/raylib/lib/$(Platform)/$(Configuration)")
 target_link_libraries(${PROJECT_NAME} raylib winmm)
 
 # set Raylib definitions
