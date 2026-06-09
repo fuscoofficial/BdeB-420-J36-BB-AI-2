@@ -13,6 +13,7 @@ using namespace BdB;
 
 int main()
 {
-    cout << "Hello BdeB!" << std::endl;
-    pressToContinue();
+ 
+	//Core::GameTest{}.run();
+
 }
