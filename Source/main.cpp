@@ -15,7 +15,4 @@ int main()
 {
     cout << "Hello BdeB!" << std::endl;
     pressToContinue();
-
-	const int screenWidth = 800;
-	const int screenHeight = 450;
 }
