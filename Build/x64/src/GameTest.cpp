@@ -2,14 +2,18 @@
 
 namespace Core
 {
-	GameTest::GameTest() 
-	{
+	GameTest::GameTest()
+		= default;
 
+	GameTest::~GameTest()
+		= default;
+
+	GameBase::~GameBase()
+	{
 	}
 
-	GameTest::~GameTest() 
+	void GameBase::run()
 	{
-
 	}
 
 	void GameTest::handleInput()
@@ -25,6 +29,10 @@ namespace Core
 	void GameTest::render()
 	{
 
+	}
+
+	GameBase::GameBase()
+	{
 	}
 
 }
