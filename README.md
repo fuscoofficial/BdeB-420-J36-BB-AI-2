@@ -18,6 +18,7 @@ Generate Solution
 Build Solution (Optional)
 --------------
 * Prerequisite: 
-    1. Check if MSVC v143 component BuildTools are installed in VS2022 or VSBuildTools2022 -> https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/
+    1. Check if MSVC v143 component BuildTools are installed in VS2022 or VSBuildTools2022 
+    -> https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/
     2. Execute GenerateProject.sh in a Git MINGW terminal
 * Execute MSBuild_Project.sh in a Git MINGW terminal
