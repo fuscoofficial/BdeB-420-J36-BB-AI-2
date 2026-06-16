@@ -15,5 +15,6 @@ int main()
 {
  
 	//Core::GameTest{}.run();
+	std::cout << "Test" << endl;
 
 }
