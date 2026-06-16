@@ -4,6 +4,9 @@ namespace Core
 {
     class GameBase
     {
+
+    private:
+        bool _loop;
     public:
         virtual ~GameBase();
 
