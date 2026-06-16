@@ -2,7 +2,9 @@
 
 namespace Core
 {
-    GameBase::GameBase() = default;
+    GameBase::GameBase(): _loop(true) {
+
+    }
 
     GameBase::~GameBase() = default;
 

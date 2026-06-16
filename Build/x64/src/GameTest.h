@@ -1,22 +1,21 @@
 #pragma once
-#include "Gamebase.h"
 
-namespace Core {
+#include "GameBase.h"
+#include "Player.h"
 
-	class GameTest : public GameBase
-	{
+namespace Core
+{
+    class GameTest : public GameBase
+    {
+    private:
+        Player _player;
 
+    public:
+        GameTest();
+        ~GameTest() override;
 
-	public:
-		GameTest();
-		~GameTest() override;
-
-		void handleInput() override;
-		void update() override;
-		void render() override;
-
-	
-	};
-
-
+        void handleInput() override;
+        void update() override;
+        void render() override;
+    };
 }
