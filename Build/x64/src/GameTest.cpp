@@ -27,14 +27,53 @@ namespace Core
 		
 	}
 
-	void GameTest::render()
-	{
-		BeginDrawing();
+    void GameTest::render()
+    {
+        BeginDrawing();
 
-		ClearBackground(RAYWHITE);
+        ClearBackground(RAYWHITE);
 
-		EndDrawing();
-	}
+        const Vector2 playerPosition = _player.GetPosition();
+
+        constexpr float PLAYER_SIZE = 50.0f;
+        constexpr float EYE_SIZE = 8.0f;
+
+     
+        DrawRectangleV(
+            playerPosition,
+            { PLAYER_SIZE, PLAYER_SIZE },
+            BLUE
+        );
+
+     
+        DrawRectangle(
+            static_cast<int>(playerPosition.x + 10.0f),
+            static_cast<int>(playerPosition.y + 12.0f),
+            static_cast<int>(EYE_SIZE),
+            static_cast<int>(EYE_SIZE),
+            BLACK
+        );
+
+     
+        DrawRectangle(
+            static_cast<int>(playerPosition.x + 32.0f),
+            static_cast<int>(playerPosition.y + 12.0f),
+            static_cast<int>(EYE_SIZE),
+            static_cast<int>(EYE_SIZE),
+            BLACK
+        );
+
+      
+        DrawRectangle(
+            static_cast<int>(playerPosition.x + 15.0f),
+            static_cast<int>(playerPosition.y + 35.0f),
+            20,
+            5,
+            BLACK
+        );
+
+        EndDrawing();
+    }
 
 
 
