@@ -10,5 +10,6 @@ namespace Core
     void SetDirectionCommand::Execute(Player& player)
     {
         player.SetDirection(_direction);
+        player.SetMoving(true);
     }
 }

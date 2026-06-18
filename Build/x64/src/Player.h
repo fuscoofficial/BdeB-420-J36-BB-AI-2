@@ -21,7 +21,12 @@ namespace Core
         void SetDirection(PlayerDirection direction);
         PlayerDirection GetDirection() const;
 
+        void SetMoving(bool isMoving);
+        void Move(float deltaTime);
+
     private:
         PlayerDirection _direction;
+        bool _isMoving;
+        float _speed;
     };
 }

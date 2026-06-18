@@ -1,4 +1,5 @@
 #include "GameTest.h"
+
 #include <raylib.h>
 namespace Core
 {
@@ -14,18 +15,23 @@ namespace Core
 	}
 
 
-	void GameTest::handleInput()
-	{
-		if(WindowShouldClose())
-		{
-			_loop = false;
-		}
-	}
+    void GameTest::handleInput()
+    {
+        if (WindowShouldClose())
+        {
+            _loop = false;
+            return;
+        }
 
-	void GameTest::update()
-	{
-		
-	}
+        _inputHandler.HandleInput(_player);
+    }
+
+    void GameTest::update()
+    {
+        const float deltaTime = GetFrameTime();
+
+        _player.Move(deltaTime);
+    }
 
     void GameTest::render()
     {

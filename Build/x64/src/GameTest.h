@@ -2,6 +2,7 @@
 
 #include "GameBase.h"
 #include "Player.h"
+#include "PlayerInputHandler.h"
 
 namespace Core
 {
@@ -9,6 +10,7 @@ namespace Core
     {
     private:
         Player _player;
+        PlayerInputHandler _inputHandler;
 
     public:
         GameTest();
