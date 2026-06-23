@@ -23,10 +23,14 @@ namespace Core
 
         void SetMoving(bool isMoving);
         void Move(float deltaTime);
+        void ClampToScreen(float screenWidth, float screenHeight);
 
     private:
         PlayerDirection _direction;
         bool _isMoving;
-        float _speed;
+        float _currentSpeed;
+        float _maxSpeed;
+        float _acceleration;
+        float _deceleration;
     };
 }

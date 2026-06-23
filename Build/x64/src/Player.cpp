@@ -6,7 +6,10 @@ namespace Core
         : Actor(position),
         _direction(PlayerDirection::Down),
         _isMoving(false),
-        _speed(200.0f)
+        _currentSpeed(0.0f),
+        _maxSpeed(200.0f),
+        _acceleration(600.0f),
+        _deceleration(800.0f)
     {
     }
 
@@ -27,7 +30,26 @@ namespace Core
 
     void Player::Move(float deltaTime)
     {
-        if (!_isMoving)
+        if (_isMoving)
+        {
+            _currentSpeed += _acceleration * deltaTime;
+
+            if (_currentSpeed > _maxSpeed)
+            {
+                _currentSpeed = _maxSpeed;
+            }
+        }
+        else
+        {
+            _currentSpeed -= _deceleration * deltaTime;
+
+            if (_currentSpeed < 0.0f)
+            {
+                _currentSpeed = 0.0f;
+            }
+        }
+
+        if (_currentSpeed <= 0.0f)
         {
             return;
         }
@@ -35,20 +57,45 @@ namespace Core
         switch (_direction)
         {
         case PlayerDirection::Up:
-            _position.y -= _speed * deltaTime;
+            _position.y -= _currentSpeed * deltaTime;
             break;
 
         case PlayerDirection::Down:
-            _position.y += _speed * deltaTime;
+            _position.y += _currentSpeed * deltaTime;
             break;
 
         case PlayerDirection::Left:
-            _position.x -= _speed * deltaTime;
+            _position.x -= _currentSpeed * deltaTime;
             break;
 
         case PlayerDirection::Right:
-            _position.x += _speed * deltaTime;
+            _position.x += _currentSpeed * deltaTime;
             break;
+        }
+    }
+
+    void Player::ClampToScreen(float screenWidth, float screenHeight)
+    {
+        constexpr float PLAYER_SIZE = 50.0f;
+
+        if (_position.x < 0.0f)
+        {
+            _position.x = 0.0f;
+        }
+
+        if (_position.y < 0.0f)
+        {
+            _position.y = 0.0f;
+        }
+
+        if (_position.x > screenWidth - PLAYER_SIZE)
+        {
+            _position.x = screenWidth - PLAYER_SIZE;
+        }
+
+        if (_position.y > screenHeight - PLAYER_SIZE)
+        {
+            _position.y = screenHeight - PLAYER_SIZE;
         }
     }
 }

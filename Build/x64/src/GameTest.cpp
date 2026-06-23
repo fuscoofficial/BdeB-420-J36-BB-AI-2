@@ -31,6 +31,7 @@ namespace Core
         const float deltaTime = GetFrameTime();
 
         _player.Move(deltaTime);
+        _player.ClampToScreen(720.0f, 480.0f);
     }
 
     void GameTest::render()
