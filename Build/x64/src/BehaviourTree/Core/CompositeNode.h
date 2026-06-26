@@ -13,6 +13,11 @@ namespace BehaviourTree {
 			}
 		}
 
+		void addChild(Node* node)
+		{
+			_nodes.push_back(node);
+		}
+
 	
 	protected:
 		CompositeNode() = default;
