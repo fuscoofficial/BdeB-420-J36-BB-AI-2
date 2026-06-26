@@ -5,6 +5,9 @@ using namespace BdB;
 
 int main()
 {
+	BehaviourTree::BehaviourTree tree;
+	tree.buildTestTree();
+	tree.tick();
 
 	Core::GameTest{}.run();
 	//TODO 
