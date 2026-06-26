@@ -13,13 +13,10 @@ namespace BehaviourTree {
 		BehaviourTree()= default;
 		~BehaviourTree();
 	
-		NodeState tick() const{
+		BehaviourTree(const BehaviourTree&) = delete;
+		BehaviourTree& operator=(const BehaviourTree&) = delete;
 
-			if(_rootNode)
-				return _rootNode->tick();
-			return NodeState::FAILURE;
-		}
-	
+		NodeState tick() const;
 		void buildTestTree();
 	
 	
