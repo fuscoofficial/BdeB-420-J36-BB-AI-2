@@ -1,5 +1,5 @@
 #pragma once
-#include "Node.h"
+#include "Core/Node.h"
 
 namespace BehaviourTree {
 
@@ -11,7 +11,7 @@ namespace BehaviourTree {
 
 	public:
 		BehaviourTree()= default;
-		~BehaviourTree() = default;
+		~BehaviourTree();
 	
 		NodeState tick() const{
 
@@ -20,7 +20,7 @@ namespace BehaviourTree {
 			return NodeState::FAILURE;
 		}
 	
-		
+		void buildTestTree();
 	
 	
 	};

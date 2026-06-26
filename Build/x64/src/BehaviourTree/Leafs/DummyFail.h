@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LeafNode.h"
+#include "../Core/LeafNode.h"
 
 namespace BehaviourTree
 {

@@ -1,11 +1,10 @@
 #pragma once
 
 #include "GameBase.h"
-#include "Player.h"
-#include "PlayerInputHandler.h"
-#include "BehaviourTree.h"
+#include "../Player/Player.h"
+#include "../Player/PlayerInputHandler.h"
+#include "../BehaviourTree/BehaviourTree.h"
 
-using namespace BehaviourTree;
 
 namespace Core
 {
